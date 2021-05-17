@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game-Puzzel</title>
+</head>
+<body>
+<img id="tompic" src="https://i.pinimg.com/236x/53/a4/c4/53a4c4806a5174cc3b415589e54c79f7.jpg" height="400px" width="200px" onclick="changeImg1()">
+<img id="jerrypic" src="https://i.pinimg.com/564x/51/40/06/51400640d13848034bac8ffb40614066.jpg" height="400px" width="200px" onclick="changeImg2()">
+<h1 id="show" style="color: red"></h1>
+<script>
+    let count1 = 1;
+    let count2 = 1;
+    let pic1 = document.getElementById("tompic");
+    let pic2 = document.getElementById("jerrypic");
+
+    function  changeImg1(){
+        if (count1 == 1) {
+            pic1.src = 'https://i.pinimg.com/564x/51/40/06/51400640d13848034bac8ffb40614066.jpg';
+            count1++;
+        } else {
+            if (count1 == 2) {
+                pic1.src = 'https://i.pinimg.com/564x/5c/26/52/5c265259f626f75da99e9fb79c345ab8.jpg';
+                count1++;
+            } else {
+                if (count1 == 3) {
+                    pic1.src = 'https://i.pinimg.com/236x/53/a4/c4/53a4c4806a5174cc3b415589e54c79f7.jpg';
+                    count1 = 1;
+                }
+            }
+        }
+        check();
+    }
+
+    function  changeImg2(){
+        if (count2 == 1) {
+            pic2.src = 'https://i.pinimg.com/564x/5c/26/52/5c265259f626f75da99e9fb79c345ab8.jpg';
+            count2++;
+        } else {
+            if (count2 == 2) {
+                pic2.src = 'https://i.pinimg.com/236x/53/a4/c4/53a4c4806a5174cc3b415589e54c79f7.jpg';
+                count2++;
+            } else {
+                if (count2 == 3) {
+                    pic2.src = 'https://i.pinimg.com/564x/51/40/06/51400640d13848034bac8ffb40614066.jpg';
+                    count2 = 1;
+                }
+            }
+        }
+        check();
+    }
+
+    function check() {
+        if (pic1.src == pic2.src) {
+            document.getElementById("show").innerText = "You Win!";
+        } else {
+            document.getElementById("show").innerText = "";
+        }
+    }
+
+</script>
+</body>
+</html>

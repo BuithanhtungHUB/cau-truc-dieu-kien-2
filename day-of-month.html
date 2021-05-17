@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính-số-ngày-trong-tháng</title>
+</head>
+<body>
+<form>
+    <span><input id="month" type="text"></span>
+    <span><input id="bt" onclick="checkmonth()" type="button" value="Tính số ngày"></span>
+    <p id="kq"></p>
+    <Script>
+        function checkmonth() {
+            let m = document.getElementById('month').value;
+            switch (m) {
+                case '1':
+                case '3':
+                case '5':
+                case '7':
+                case '8':
+                case '10':
+                case '12':
+                    document.getElementById('kq').innerHTML = 'Tháng ' + m + ' có 31 ngày';
+                    break;
+                case '4':
+                case '6':
+                case '9':
+                case '11':
+                    document.getElementById('kq').innerHTML = 'Tháng ' + m + ' có 30 ngày';
+                    break;
+                case '2':
+                    document.getElementById('kq').innerHTML = 'Tháng ' + m + ' có 28 hoặc 29 ngày';
+                    break;
+                default:
+                    document.getElementById('kq').innerHTML = 'Dữ liệu nhập vào không đúng!';
+            }
+
+        }
+
+    </Script>
+</form>
+</body>
+</html>
